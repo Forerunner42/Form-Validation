@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Using Regular Expression</title>
+    <style>
+        body{
+            font-family : Arial, Helvetica, sans-serif;
+            line-height : 1.5em;
+            max-width : 600px;
+            margin : 0 auto;
+            padding : 20px;
+        }
+        .form-group{
+            margin-bottom : 15px;
+        }
+        .error{
+            color : red;
+            font-size : 14px;
+            margin-top : 5px;
+            display : none;
+        }
+
+        label{
+            display : block;
+            margin-bottom : 5px;
+            font-weight : bold;
+        }
+        input{
+            width : 100%;
+            padding : 8px;
+            border : 1px solid lightseagreen;
+            border-radius : 4px;
+        }
+        .success-message{
+            display:none;
+        }
+    </style>
+    <script src="form.js" defer></script>
+</head>
+<body>
+    <h1>Form Validation with RegEx</h1>
+    <p>This form demonstrates different types of form validation using Regular Expression</p>
+
+    <form id="validateForm">
+        <!-- Name Field -->
+        <div class="form-group">
+            <label for="name">Name (Letters Only)</label>
+            <input type="text" id="name" name="name">
+            <div class="error" id="nameError">Name must contain only letters and spaces</div>
+        </div>
+
+
+        <!-- Username Field -->
+        <div class="form-group">
+            <label for="username">Username (Letters, Numbers, and Underscore)</label>
+            <input type="text" id="username" name="username">
+            <div class="error" id="usernameError">Username must be 5-16 characters and can contain only letters, numbers, and underscores</div>
+        </div>
+
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <div class="error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+
+        <!-- Phone Number Field -->
+        <div class="form-group">
+            <label for="phone">Phone Number : (XXX-XXX-XXXX)</label>
+            <input type="text" id="phone" name="phone">
+            <div class="error" id="phoneError">Please enter a valid phone number in XXX-XXX-XXXX</div>
+        </div>
+
+
+        <!-- Zipcode Field -->
+        <div class="form-group">
+            <label for="zipcode">Zipcode (5 digits)</label>
+            <input type="text" id="zipcode" name="zipcode">
+            <div class="error" id="zipcodeError">Please enter a valid zipcode of 5 digits</div>
+        </div>
+
+
+        <!-- Date Field -->
+        <div class="form-group">
+            <label for="date">Date (MM-DD-YYYY)</label>
+            <input type="text" id="date" name="date">
+            <div class="error" id="dateError">Please enter a valid date in MM-DD-YYYY</div>
+        </div>
+
+
+        <!-- Credit Card Field -->
+        <div class="form-group">
+            <label for="creditCard">Credit Card (16 digits)</label>
+            <input type="text" id="creditCard" name="creditCard">
+            <div class="error" id="creditCardError">Please enter a valid credit card of 16 digits</div>
+        </div>
+
+        
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <!-- Messages -->
+    <div class="success-message" id="successMessage">
+        Form Submitted Successfully, All Validations Passed.
+    </div>
+</body>
+</html>
